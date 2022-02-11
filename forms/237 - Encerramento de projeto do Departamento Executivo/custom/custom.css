@@ -1,0 +1,19 @@
+.panel-info .panel-heading {
+    background: #002060 !important;
+}
+
+.panel-info .panel-heading a{
+    color: white;
+}
+
+.panel-info .panel-heading ::after{
+    color: white !important;
+}
+
+.panel.panel-info{
+    border-color: #002060;
+}
+
+[data-field-name="AbrirScopi"] {
+    text-align: center;
+}
