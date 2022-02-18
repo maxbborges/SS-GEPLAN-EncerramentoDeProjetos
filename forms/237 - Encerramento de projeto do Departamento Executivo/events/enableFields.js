@@ -1,5 +1,8 @@
 function enableFields(form) {
     var activity = getValue('WKNumState');
+    if (activity!=16){
+        form.setEnabled('Conside_solicit', false);
+    }
     if (activity == 16) {
         form.setEnabled('Ajustes_Di_adj', false);
         form.setEnabled('Ajustes_P_E', false);

@@ -22,7 +22,7 @@ function validateForm(form) {
         throw "Data de fim n\u00E3o pode ser vazio.";
     }
     if ((form.getValue("prazo") == null || form.getValue("prazo") == "" || form.getValue("prazo") != "Concluído dentro do prazo") && (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
-        if(form.getValue("prazo") != "Concluído dentro do prazo" && form.getValue("prazo") != ""){
+        if(form.getValue("prazo") != "Concluído dentro do prazo"){
             if(form.getValue("just_prazo") == ""){
                 throw "Justifique o prazo!";
             }
@@ -31,8 +31,8 @@ function validateForm(form) {
         }
         
     }
-    if ((form.getValue("escopo") == null || form.getValue("escopo") == "" || form.getValue("escopo") != "Escopo concluído parcialmente") && (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
-        if(form.getValue("escopo") != "Concluído dentro do prazo" && form.getValue("escopo") != ""){
+    if ((form.getValue("escopo") == null || form.getValue("escopo") == "" || form.getValue("escopo") == "Escopo concluído parcialmente") && (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
+        if(form.getValue("escopo") == "Escopo concluído parcialmente"){
             if(form.getValue("just_escopo") == ""){
                 throw "Justifique o Escopo!";
             }
@@ -53,4 +53,15 @@ function validateForm(form) {
     if ((form.getValue("column4_1___1") == null || form.getValue("column4_1___1") == "") && (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
         throw "Justificativa  em resultado físico n\u00E3o pode ser vazio.";
     }
+    
+    if ((form.getValue("doc_id") == null || 
+    		form.getValue("doc_id") == "" || 
+    		form.getValue("nr_pasta") == "" || 
+    		form.getValue("nr_pasta") == null) && 
+    		(getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true')) &&
+    		activity == 29 && form.getValue("Aprov_Dir_Exec")=='Sim'
+    ) {
+        throw "Necessário Gerar o Formulário através do botão 'Gerar PDF' em Aprovação Diretoria Executiva!";
+    }
+    
 }
