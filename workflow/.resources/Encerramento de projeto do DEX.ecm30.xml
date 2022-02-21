@@ -29,7 +29,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Encerramento de projeto do Departamento Executivo</processId>
-      <version>62</version>
+      <version>63</version>
     </processDefinitionVersionPK>
     <versionDescription>Nova Versão.</versionDescription>
     <formId>4114</formId>
@@ -1176,7 +1176,7 @@
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
         <expressionOrder>1</expressionOrder>
-        <version>62</version>
+        <version>63</version>
         <sequence>8</sequence>
       </conditionProcessStatePK>
       <condition></condition>
@@ -1189,7 +1189,7 @@
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
         <expressionOrder>2</expressionOrder>
-        <version>62</version>
+        <version>63</version>
         <sequence>8</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1203,7 +1203,7 @@
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
         <expressionOrder>1</expressionOrder>
-        <version>62</version>
+        <version>63</version>
         <sequence>14</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1216,7 +1216,7 @@
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
         <expressionOrder>2</expressionOrder>
-        <version>62</version>
+        <version>63</version>
         <sequence>14</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1230,7 +1230,7 @@
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
         <expressionOrder>1</expressionOrder>
-        <version>62</version>
+        <version>63</version>
         <sequence>21</sequence>
       </conditionProcessStatePK>
       <condition></condition>
@@ -1243,7 +1243,7 @@
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
         <expressionOrder>2</expressionOrder>
-        <version>62</version>
+        <version>63</version>
         <sequence>21</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1257,7 +1257,7 @@
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
         <expressionOrder>3</expressionOrder>
-        <version>62</version>
+        <version>63</version>
         <sequence>21</sequence>
       </conditionProcessStatePK>
       <condition></condition>
@@ -1269,7 +1269,7 @@
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
         <expressionOrder>1</expressionOrder>
-        <version>62</version>
+        <version>63</version>
         <sequence>31</sequence>
       </conditionProcessStatePK>
       <condition></condition>
@@ -1281,7 +1281,7 @@
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
         <expressionOrder>2</expressionOrder>
-        <version>62</version>
+        <version>63</version>
         <sequence>31</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1295,7 +1295,7 @@
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
         <expressionOrder>3</expressionOrder>
-        <version>62</version>
+        <version>63</version>
         <sequence>31</sequence>
       </conditionProcessStatePK>
       <condition></condition>
@@ -1307,7 +1307,7 @@
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
         <expressionOrder>1</expressionOrder>
-        <version>62</version>
+        <version>63</version>
         <sequence>41</sequence>
       </conditionProcessStatePK>
       <condition></condition>
@@ -1320,7 +1320,7 @@
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
         <expressionOrder>2</expressionOrder>
-        <version>62</version>
+        <version>63</version>
         <sequence>41</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1333,7 +1333,7 @@
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
         <expressionOrder>3</expressionOrder>
-        <version>62</version>
+        <version>63</version>
         <sequence>41</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1937,13 +1937,9 @@
     var atividade = getValue(&quot;WKNumState&quot;)&#xd;
 &#xd;
     if (atividade==29){&#xd;
-        hAPI.attachDocument(hAPI.getCardValue(&quot;doc_id&quot;));&#xd;
-            var docs = hAPI.listAttachments();&#xd;
-            log.info(docs)&#xd;
-            if (docs.size() &gt; 0) {&#xd;
-                log.info(docs)&#xd;
-        }&#xd;
-        &#xd;
+    	if (hAPI.getCardValue(&quot;Ajus_Dir_Execu&quot;)==&quot;Sim&quot;){&#xd;
+            hAPI.attachDocument(hAPI.getCardValue(&quot;doc_id&quot;));&#xd;
+    	}        &#xd;
     }&#xd;
 }</eventDescription>
     </WorkflowProcessEvent>
@@ -2419,7 +2415,7 @@ function anexaDocumentoAssinado(idDocumento, nr_pasta,nr_solicitacao) {
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
-        <version>62</version>
+        <version>63</version>
         <linkSequence>7</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2430,7 +2426,7 @@ function anexaDocumentoAssinado(idDocumento, nr_pasta,nr_solicitacao) {
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
-        <version>62</version>
+        <version>63</version>
         <linkSequence>13</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2441,7 +2437,7 @@ function anexaDocumentoAssinado(idDocumento, nr_pasta,nr_solicitacao) {
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
-        <version>62</version>
+        <version>63</version>
         <linkSequence>15</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2452,7 +2448,7 @@ function anexaDocumentoAssinado(idDocumento, nr_pasta,nr_solicitacao) {
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
-        <version>62</version>
+        <version>63</version>
         <linkSequence>20</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2463,7 +2459,7 @@ function anexaDocumentoAssinado(idDocumento, nr_pasta,nr_solicitacao) {
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
-        <version>62</version>
+        <version>63</version>
         <linkSequence>25</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2474,7 +2470,7 @@ function anexaDocumentoAssinado(idDocumento, nr_pasta,nr_solicitacao) {
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
-        <version>62</version>
+        <version>63</version>
         <linkSequence>25</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2485,7 +2481,7 @@ function anexaDocumentoAssinado(idDocumento, nr_pasta,nr_solicitacao) {
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
-        <version>62</version>
+        <version>63</version>
         <linkSequence>25</linkSequence>
         <bendSequence>3</bendSequence>
       </processLinkBendPK>
@@ -2496,7 +2492,7 @@ function anexaDocumentoAssinado(idDocumento, nr_pasta,nr_solicitacao) {
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
-        <version>62</version>
+        <version>63</version>
         <linkSequence>26</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2507,7 +2503,7 @@ function anexaDocumentoAssinado(idDocumento, nr_pasta,nr_solicitacao) {
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
-        <version>62</version>
+        <version>63</version>
         <linkSequence>33</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2518,7 +2514,7 @@ function anexaDocumentoAssinado(idDocumento, nr_pasta,nr_solicitacao) {
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
-        <version>62</version>
+        <version>63</version>
         <linkSequence>42</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2529,7 +2525,7 @@ function anexaDocumentoAssinado(idDocumento, nr_pasta,nr_solicitacao) {
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
-        <version>62</version>
+        <version>63</version>
         <linkSequence>44</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2540,7 +2536,7 @@ function anexaDocumentoAssinado(idDocumento, nr_pasta,nr_solicitacao) {
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
-        <version>62</version>
+        <version>63</version>
         <linkSequence>47</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2551,7 +2547,7 @@ function anexaDocumentoAssinado(idDocumento, nr_pasta,nr_solicitacao) {
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
-        <version>62</version>
+        <version>63</version>
         <linkSequence>95</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2562,7 +2558,7 @@ function anexaDocumentoAssinado(idDocumento, nr_pasta,nr_solicitacao) {
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
-        <version>62</version>
+        <version>63</version>
         <linkSequence>95</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2575,7 +2571,7 @@ function anexaDocumentoAssinado(idDocumento, nr_pasta,nr_solicitacao) {
       <processStateTriggerPK>
         <companyId>1</companyId>
         <processId>Encerramento de projeto do DEX</processId>
-        <version>62</version>
+        <version>63</version>
         <stateSequence>56</stateSequence>
         <triggerSequence>0</triggerSequence>
       </processStateTriggerPK>

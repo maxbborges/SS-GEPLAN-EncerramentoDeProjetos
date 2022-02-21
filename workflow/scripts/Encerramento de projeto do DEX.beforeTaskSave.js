@@ -4,12 +4,8 @@ function beforeTaskSave(colleagueId,nextSequenceId,userList){
     var atividade = getValue("WKNumState")
 
     if (atividade==29){
-        hAPI.attachDocument(hAPI.getCardValue("doc_id"));
-            var docs = hAPI.listAttachments();
-            log.info(docs)
-            if (docs.size() > 0) {
-                log.info(docs)
-        }
-        
+    	if (hAPI.getCardValue("Ajus_Dir_Execu")=="Sim"){
+            hAPI.attachDocument(hAPI.getCardValue("doc_id"));
+    	}        
     }
 }

@@ -5,6 +5,7 @@ var horario = new Date().toLocaleTimeString('pt-BR');
 $(document).ready(function () {
     init();
     loading = FLUIGC.loading(window);
+    $("#div_gerar_pdf").hide()
 
     $("#id_escopo").change(function() {
         if($("#id_escopo").val()=='Escopo concluído parcialmente'){
@@ -21,6 +22,14 @@ $(document).ready(function () {
             $('[data-field-name="just_prazo"] span').remove()
         }
     });
+
+    $("[name='Aprov_Dir_Exec']").change(function(){
+        if ($(this).val()=='Sim'){
+            $("#div_gerar_pdf").show()
+        } else {
+            $("#div_gerar_pdf").hide()
+        }
+    })
 });
 
 function init() {
@@ -46,10 +55,6 @@ function init() {
             }
             $('[data-field-name="Quanto_ao_resul"] .btn').hide()
         },500)
-    }
-
-    if (ATIVIDADE!=29){
-        $('#div_gerar_pdf').hide()
     }
     
      if(ATIVIDADE==5||ATIVIDADE==0){
@@ -86,9 +91,11 @@ function init() {
 
      }
      if(ATIVIDADE==16){
-        setTimeout(()=>{
-            $('tbody tr i')[1].remove()
-        },500)
+        if (MODE!='VIEW'){
+            setTimeout(()=>{
+                $('tbody tr i')[1].remove()
+            },500)
+        }
      }
 }
 

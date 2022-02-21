@@ -418,8 +418,13 @@
 																	class="form-control" label="% realizado"></div>
 														</td>
 														<td class="fs-v-align-middle">
-															<div class="form-input"><input type="text" name="column4_1"
-																	class="form-control" label="Justificativa"></div>
+															<!-- <div class="form-input"><input type="text" name="column4_1"
+																	class="form-control" label="Justificativa"></div> -->
+																	<div class="form-input">
+																		<div class="form-group">
+																			<textarea class="form-control" rows="5" name="column4_1" placeholder="" data-size="big"></textarea>
+																		</div>
+																	</div>
 														</td>
 													</tr>
 												</tbody>
@@ -463,8 +468,13 @@
 																	class="form-control" label="% realizado"></div>
 														</td>
 														<td class="fs-v-align-middle">
-															<div class="form-input"><input type="text" name="column4_2"
+															<!-- <div class="form-input"><input type="text" name="column4_2"
 																	class="form-control">
+															</div> -->
+															<div class="form-input">
+																<div class="form-group">
+																	<textarea class="form-control" rows="5" name="column4_2" placeholder="" data-size="big"></textarea>
+																</div>
 															</div>
 														</td>
 													</tr>
@@ -719,7 +729,7 @@
 							</div>
 						</div>
 						<div class="form-group row" id="div_gerar_pdf">
-							<button type="button" class="btn btn-primary" onclick="verificaPDF()">Gerar PDF</button>
+							<button type="button" class="btn btn-primary" onclick="verificaPDF()" id="btn_gerar_pdf">Gerar PDF</button>
 						</div>
 					</div>
 				</div>
