@@ -25,27 +25,12 @@
 <body class="fluig-style-guide">
 	<form class="totvs-form grid vertical create-form-components ui-sortable t0" name="createFormComponents"
 		style="padding-left: 10px; padding-right: 10px;">
-		<div class="form-field" data-type="textbox" data-show-properties="" data-field-name="doc_id">
-			<div class="form-input">
-				<div class="form-group">
-					<input type="hidden" class="form-control" name="doc_id" value="" placeholder="" data-size="big">
-				</div>
-			</div>
-		</div>
-		<div class="form-field" data-type="textbox" data-show-properties="" data-field-name="doc_id_assinado">
-			<div class="form-input">
-				<div class="form-group">
-					<input type="hidden" class="form-control" name="doc_id_assinado" value="" placeholder="" data-size="big">
-				</div>
-			</div>
-		</div>
-		<div class="form-field" data-type="textbox" data-show-properties="" data-field-name="nr_pasta">
-			<div class="form-input">
-				<div class="form-group">
-					<input type="hidden" class="form-control" name="nr_pasta" value="" placeholder="" data-size="big">
-				</div>
-			</div>
-		</div>
+		<input type="hidden" class="form-control" name="doc_id" value="" placeholder="" data-size="big">
+		<input type="hidden" class="form-control" name="doc_id_assinado" value="" placeholder="" data-size="big">
+		<!-- PASTA HOMOLOGAÇÃO -->
+		<input type="hidden" class="form-control" name="nr_pasta" value="6793" placeholder="" data-size="big">
+		<!-- PASTA PRODUÇÃO -->
+		<!-- <input type="hidden" class="form-control" name="nr_pasta" value="7614" placeholder="" data-size="big"> -->
 		<h1 class="title-form-application">Encerramento de projeto do Departamento Executivo</h1>
 		<div class="paragraph-is-required system-message-information alert alert-info" role="alert">Todos os campos com
 			* são de preenchimento obrigatório.</div>
@@ -64,9 +49,9 @@
 								<div class="form-field" data-type="textbox" data-show-properties=""
 									data-field-name="id_do_projeto">
 									<div class="form-input">
-										<div class="form-group"><label>ID do projeto</label><span
-												class="required text-danger"><strong>*</strong></span><input type="text"
-												class="form-control" name="id_do_projeto" value=""
+										<div class="form-group">
+											<label class="required">ID do projeto</label>
+											<input type="text" class="form-control" name="id_do_projeto" value=""
 												placeholder="Escreva o nome do projeto" data-size="big"
 												required="required" readonly>
 										</div>
@@ -101,10 +86,11 @@
 								<div class="form-field" data-type="date" data-show-properties=""
 									data-field-name="data_inicio">
 									<div class="form-input">
-										<div class="form-group"><label>Data de início</label><span
-												class="required text-danger"><strong>*</strong></span><input id="date3"
-												type="text" class="form-control" name="data_inicio" data-date=""
-												required="required" readonly></div>
+										<div class="form-group">
+											<label class="required">Data de início</label>
+											<input id="date3" type="text" class="form-control" name="data_inicio"
+												data-date="" required="required" readonly>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -112,10 +98,11 @@
 								<div class="form-field" data-type="date" data-show-properties=""
 									data-field-name="data_fim">
 									<div class="form-input">
-										<div class="form-group"><label>Data de fim</label><span
-												class="required text-danger"><strong>*</strong></span><input id="date4"
-												type="text" class="form-control" name="data_fim" data-date=""
-												required="required" readonly></div>
+										<div class="form-group">
+											<label class="required">Data de fim</label>
+											<input id="date4" type="text" class="form-control" name="data_fim"
+												data-date="" required="required" readonly>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -125,11 +112,12 @@
 								<div class="form-field" data-type="textarea" data-show-properties=""
 									data-field-name="Descri_projeto" style="position: relative; left: 0px; top: 0px;">
 									<div class="form-input">
-										<div class="form-group"><label>Descrição do projeto</label><span
-												class="required text-danger"><strong>*</strong></span><textarea
-												class="form-control" rows="3" name="Descri_projeto"
+										<div class="form-group">
+											<label class="required">Descrição do projeto</label>
+											<textarea class="form-control" rows="3" name="Descri_projeto"
 												placeholder="Insira a descrição do projeto" data-size="big"
-												required="required" readonly></textarea></div>
+												required="required" readonly></textarea>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -150,10 +138,8 @@
 									data-field-name="area_responsave">
 									<div class="form-input">
 										<div class="form-group">
-											<label>Área Responsável</label>
-											<span class="required text-danger">
-												<strong>*</strong>
-											</span>
+											<label class="required">Área Responsável</label>
+
 											<input type="text" class="form-control" name="area_responsave" value=""
 												placeholder="Insira a área responsável por extenso " data-size="medium"
 												required="required" analytics="true" gooddataid="2" readonly>
@@ -177,10 +163,7 @@
 									data-field-name="resp_pelo_proj" style="position: relative; left: 0px; top: 0px;">
 									<div class="form-input">
 										<div class="form-group">
-											<label>Responsável pelo projeto</label>
-											<span class="required text-danger">
-												<strong>*</strong>
-											</span>
+											<label class="required">Responsável pelo projeto</label>
 											<input type="text" class="form-control" name="resp_pelo_proj" value
 												placeholder="Insira o nome do responsável pelo projeto"
 												data-size="medium" analytics="true" gooddataid="3" required="required"
@@ -206,10 +189,7 @@
 									data-field-name="OE">
 									<div class="form-input">
 										<div class="form-group">
-											<label>Objetivo estratégico</label>
-											<span class="required text-danger">
-												<strong>*</strong>
-											</span>
+											<label class="required">Objetivo estratégico</label>
 											<input type="text" class="form-control" name="OE" value=""
 												placeholder="Insira o Objetivo estratégico" data-size="big"
 												required="required" readonly>
@@ -231,10 +211,7 @@
 									data-field-name="GOE">
 									<div class="form-input">
 										<div class="form-group">
-											<label>Gestor do objetivo estratégico</label>
-											<span class="required text-danger">
-												<strong>*</strong>
-											</span>
+											<label class="required">Gestor do objetivo estratégico</label>
 											<input type="text" class="form-control" name="GOE" value
 												placeholder="Insira o Gestor do objetivo estratégico" data-size="big"
 												required="required" readonly>
@@ -248,12 +225,13 @@
 								<div class="form-field" data-type="textbox" data-show-properties=""
 									data-field-name="link_scopi" style="position: relative; left: 0px; top: 0px;">
 									<div class="form-input">
-										<div class="form-group"><label>Endereço do projeto no SCOPI</label><span
-												class="required text-danger"><strong>*</strong></span><input type="text"
-												class="form-control" name="link_scopi"
+										<div class="form-group">
+											<label class="required">Endereço do projeto no SCOPI</label>
+											<input type="text" class="form-control" name="link_scopi"
 												value="Copie e cole aqui o link do endereço do projeto no SCOPI"
 												placeholder="Cop" data-size="big" required="required" analytics="true"
-												gooddataid="1" readonly></div>
+												gooddataid="1" readonly>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -291,9 +269,10 @@
 										<div class="form-field" data-type="combo" data-show-properties=""
 											data-field-name="prazo">
 											<div class="form-input">
-												<div class="form-group"><label>Quanto ao prazo</label><span
-														class="required text-danger"><strong>*</strong></span><select
-														class="form-control" name="prazo" id="id_prazo" required="required">
+												<div class="form-group">
+													<label class="required">Quanto ao prazo</label>
+													<select class="form-control" name="prazo" id="id_prazo"
+														required="required">
 														<option value=""></option>
 														<option value="Concluído dentro do prazo">Concluído dentro do
 															prazo
@@ -302,11 +281,11 @@
 														</option>
 														<option value="Não executado">Não executado</option>
 														<option value="Cancelado">Cancelado</option>
-													</select></div>
+													</select>
+												</div>
 											</div>
 										</div>
 									</div>
-
 								</div>
 								<div class="row">
 									<div class="col-sm-12">
@@ -314,7 +293,8 @@
 											data-field-name="just_prazo">
 											<div class="form-input">
 												<div class="form-group"><label>Justifique</label><textarea
-														class="form-control" rows="3" name="just_prazo" id="id_just_prazo"
+														class="form-control" rows="3" name="just_prazo"
+														id="id_just_prazo"
 														placeholder="Preenchimento obrigatório caso o projeto tenha sido concluído fora do prazo, não executado ou cancelado."
 														data-size="big"></textarea></div>
 											</div>
@@ -328,9 +308,10 @@
 										<div class="form-field" data-type="combo" data-show-properties=""
 											data-field-name="escopo">
 											<div class="form-input">
-												<div class="form-group"><label>Quanto ao escopo</label><span
-														class="required text-danger"><strong>*</strong></span><select
-														class="form-control" name="escopo" required="required" id="id_escopo">
+												<div class="form-group">
+													<label class="required">Quanto ao escopo</label>
+													<select class="form-control" name="escopo" required="required"
+														id="id_escopo">
 														<option value=""></option>
 														<option value="Escopo concluído totalmente">Escopo concluído
 															totalmente
@@ -341,7 +322,6 @@
 													</select>
 												</div>
 											</div>
-
 										</div>
 									</div>
 								</div>
@@ -350,10 +330,13 @@
 										<div class="form-field" data-type="textarea" data-show-properties=""
 											data-field-name="just_escopo">
 											<div class="form-input">
-												<div class="form-group"><label>Justifique</label><textarea
-														class="form-control" rows="3" name="just_escopo" id="id_just_escopo"
+												<div class="form-group">
+													<label>Justifique</label>
+													<textarea class="form-control" rows="3" name="just_escopo"
+														id="id_just_escopo"
 														placeholder="Preenchimento obrigatório caso o escopo tenha sido concluído parcialmente"
-														data-size="big"></textarea></div>
+														data-size="big"></textarea>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -374,117 +357,92 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-sm-12">
-								<div class="form-field" data-type="tabledetail" data-show-properties=""
-									data-field-name="Quanto_aos_resu">
-									<div class="form-input">
-										<div class="form-group"><label>Quanto aos resultados físicos</label>
-											<table tablename="tabledetailname1" class="table" noaddbutton="true" name="Quanto_aos_resu">
-												<thead>
-													<tr class="tableHeadRow">
-														<th class="tableColumn">Meta prevista
-															<span class="required text-danger">
-																<strong>*</strong>
-															</span>
-														</th>
-														<th class="tableColumn">Meta realizada
-															<span class="required text-danger">
-																<strong>*</strong>
-															</span>
-														</th>
-														<th class="tableColumn">% realizado
-															<span class="required text-danger">
-																<strong>*</strong>
-															</span>
-														</th>
-														<th class="tableColumn">Justificativa
-															<span class="required text-danger">
-																<strong>*</strong>
-															</span>
-														</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr class="tableBodyRow">
-														<td class="fs-v-align-middle">
-															<div class="form-input"><input type="text" name="column1_1"
-																	class="form-control" label="Meta prevista"></div>
-														</td>
-														<td class="fs-v-align-middle">
-															<div class="form-input"><input type="text" name="column2_1"
-																	class="form-control" label="Meta realizada"></div>
-														</td>
-														<td class="fs-v-align-middle">
-															<div class="form-input"><input type="text" name="column3_1"
-																	class="form-control" label="% realizado"></div>
-														</td>
-														<td class="fs-v-align-middle">
-															<!-- <div class="form-input"><input type="text" name="column4_1"
-																	class="form-control" label="Justificativa"></div> -->
-																	<div class="form-input">
-																		<div class="form-group">
-																			<textarea class="form-control" rows="5" name="column4_1" placeholder="" data-size="big"></textarea>
-																		</div>
-																	</div>
-														</td>
-													</tr>
-												</tbody>
-											</table><button type="button" class="btn btn-primary"
-												onclick="wdkAddChild('tabledetailname1')">Nova
-												meta</button>
-										</div>
-									</div>
-								</div>
+								<p>Quanto aos resultados físicos</p>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-sm-12">
-								<div class="form-field" data-type="tabledetail" data-show-properties=""
-									data-field-name="Quanto_ao_resul">
-									<div class="form-input">
-										<div class="form-group"><label>Quanto ao resultado orçamentário</label>
-											<table tablename="tabledetailname2" class="table" noaddbutton="true" name="Quanto_ao_resul">
-												<thead>
-													<tr class="tableHeadRow">
-														<th class="tableColumn">Orçamento previsto</th>
-														<th class="tableColumn">Orçamento realizado</th>
-														<th class="tableColumn">% realizado</th>
-														<th class="tableColumn">justificativa</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr class="tableBodyRow">
-														<td class="fs-v-align-middle">
-															<div class="form-input"><input type="text" name="column1_2"
-																	class="form-control" label="Orçamento previsto">
-															</div>
-														</td>
-														<td class="fs-v-align-middle">
-															<div class="form-input"><input type="text" name="column2_2"
-																	class="form-control" label="Orçamento realizado">
-															</div>
-														</td>
-														<td class="fs-v-align-middle">
-															<div class="form-input"><input type="text" name="column3_2"
-																	class="form-control" label="% realizado"></div>
-														</td>
-														<td class="fs-v-align-middle">
-															<!-- <div class="form-input"><input type="text" name="column4_2"
-																	class="form-control">
-															</div> -->
-															<div class="form-input">
-																<div class="form-group">
-																	<textarea class="form-control" rows="5" name="column4_2" placeholder="" data-size="big"></textarea>
-																</div>
-															</div>
-														</td>
-													</tr>
-												</tbody>
-											</table><button type="button" class="btn btn-primary"
-												onclick="wdkAddChild('tabledetailname2')">Novo
-												Registro</button>
-										</div>
-									</div>
+								<div class="form-input">
+									<table tablename="tabledetailname1" class="table" noaddbutton="true"
+										name="Quanto_aos_resu">
+										<thead>
+											<tr class="tableHeadRow">
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="tableBodyRow row form-input">
+												<td class="col-sm-4">
+													<label class='required'>Nome da Meta</label>
+													<input type="text" name="column1_1" class="form-control">
+													<label class='required'>Meta prevista</label>
+													<input type="text" name="column2_1" class="form-control">
+												</td>
+												<td class="col-sm-4">
+													<label class='required'>Meta realizada</label>
+													<input type="text" name="column3_1" class="form-control">
+													<label class='required'>% realizado</label>
+													<input type="text" name="column4_1" class="form-control">
+												</td>
+												<td class="col-sm-4">
+													<label class='required'>Justificativa</label>
+													<textarea class="form-control" rows="4" name="column5_1"
+														placeholder="" data-size="big"></textarea>
+												</td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12 rowBtn">
+								<button type="button" class="btn" onclick="wdkAddChild('tabledetailname1')">Adicionar
+									nova meta</button>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								<p>Quanto ao resultado orçamentário</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="form-input">
+									<table tablename="tabledetailname2" class="table" noaddbutton="true"
+										name="Quanto_ao_resul">
+										<thead>
+											<tr class="tableHeadRow">
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="tableBodyRow form-input row">
+												<td class="col-sm-4">
+													<label class='required'>Nome Orçamento</label>
+													<input type="text" name="column1_2" class="form-control">
+													<label class='required'>Orçamento previsto</label>
+													<input type="text" name="column2_2" class="form-control">
+												</td>
+												<td class="col-sm-4">
+													<label class='required'>Orçamento realizado</label>
+													<input type="text" name="column3_2" class="form-control">
+													<label class='required'>% realizado</label>
+													<input type="text" name="column4_2" class="form-control">
+												</td>
+												<td class="col-sm-4">
+													<label class='required'>justificativa</label>
+													<textarea class="form-control" rows="4" name="column5_2"
+														placeholder="" data-size="big"></textarea>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12 rowBtn">
+								<button type="button" class="btn" onclick="wdkAddChild('tabledetailname2')">Adicionar
+									novo Orçamento</button>
 							</div>
 						</div>
 					</div>
@@ -729,7 +687,8 @@
 							</div>
 						</div>
 						<div class="form-group row" id="div_gerar_pdf">
-							<button type="button" class="btn btn-primary" onclick="verificaPDF()" id="btn_gerar_pdf">Gerar PDF</button>
+							<button type="button" class="btn btn-primary" onclick="verificaPDF()"
+								id="btn_gerar_pdf">Gerar PDF</button>
 						</div>
 					</div>
 				</div>

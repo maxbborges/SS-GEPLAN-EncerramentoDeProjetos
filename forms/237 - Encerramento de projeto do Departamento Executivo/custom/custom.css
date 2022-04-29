@@ -17,3 +17,28 @@
 [data-field-name="AbrirScopi"] {
     text-align: center;
 }
+
+#div_02 p {
+    background: #002060;
+    color: white;
+    text-align: center;
+}
+
+#div_02 th {
+    padding: 0px;
+}
+
+.rowBtn {
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.rowBtn button{
+    background-color: #002060;
+    color: white !important;
+}
+
+form label.required:after{
+    color: #FF0000;
+    content: " *";
+}

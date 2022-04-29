@@ -42,15 +42,33 @@ function validateForm(form) {
         }
     }
     if ((form.getValue("column1_1___1") == null || form.getValue("column1_1___1") == "") && (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
-        throw "Meta Prevista em resultado físico n\u00E3o pode ser vazio.";
+        throw "Nome da meta em resultado físico n\u00E3o pode ser vazio.";
     }
     if ((form.getValue("column2_1___1") == null || form.getValue("column2_1___1") == "") && (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
-        throw "Meta Realizada  em resultado físico n\u00E3o pode ser vazio.";
+        throw "Meta prevista em resultado físico n\u00E3o pode ser vazio.";
     }
     if ((form.getValue("column3_1___1") == null || form.getValue("column3_1___1") == "") && (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
-        throw "% Resultado  em resultado físico n\u00E3o pode ser vazio.";
+        throw "Meta realizada em resultado físico n\u00E3o pode ser vazio.";
     }
     if ((form.getValue("column4_1___1") == null || form.getValue("column4_1___1") == "") && (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
+        throw "% realizado em resultado físico n\u00E3o pode ser vazio.";
+    }
+    if ((form.getValue("column5_1___1") == null || form.getValue("column5_1___1") == "") && (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
+        throw "Justificativa  em resultado físico n\u00E3o pode ser vazio.";
+    }
+    if ((form.getValue("column1_2___1") == null || form.getValue("column1_2___1") == "") && (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
+        throw "Nome do orçamento em resultado físico n\u00E3o pode ser vazio.";
+    }
+    if ((form.getValue("column2_2___1") == null || form.getValue("column2_2___1") == "") && (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
+        throw "Orçamento previsto em resultado físico n\u00E3o pode ser vazio.";
+    }
+    if ((form.getValue("column3_2___1") == null || form.getValue("column3_2___1") == "") && (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
+        throw "Orçamento realizado em resultado físico n\u00E3o pode ser vazio.";
+    }
+    if ((form.getValue("column4_2___1") == null || form.getValue("column4_2___1") == "") && (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
+        throw "% realizado em resultado físico n\u00E3o pode ser vazio.";
+    }
+    if ((form.getValue("column5_2___1") == null || form.getValue("column5_2___1") == "") && (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
         throw "Justificativa  em resultado físico n\u00E3o pode ser vazio.";
     }
     

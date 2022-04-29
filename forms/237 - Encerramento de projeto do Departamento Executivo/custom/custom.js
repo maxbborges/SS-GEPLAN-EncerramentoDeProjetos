@@ -9,17 +9,17 @@ $(document).ready(function () {
 
     $("#id_escopo").change(function() {
         if($("#id_escopo").val()=='Escopo concluído parcialmente'){
-            $('[data-field-name="just_escopo"] label').append('<span class="required text-danger"><strong>*</strong></span>')
+            $('[data-field-name="just_escopo"] label').addClass('required')
         } else {
-            $('[data-field-name="just_escopo"] span').remove()
+            $('[data-field-name="just_escopo"] label').removeClass('required')
         }
     });
 
     $("#id_prazo").change(function() {
         if($("#id_prazo").val()!='Concluído dentro do prazo'){
-            $('[data-field-name="just_prazo"] label').append('<span class="required text-danger"><strong>*</strong></span>')
+            $('[data-field-name="just_prazo"] label').addClass('required')
         } else {
-            $('[data-field-name="just_prazo"] span').remove()
+            $('[data-field-name="just_prazo"] label').removeClass('required')
         }
     });
 
@@ -58,10 +58,12 @@ function init() {
     }
     
      if(ATIVIDADE==5||ATIVIDADE==0){
-        setTimeout(()=>{
-            $('tbody tr i')[1].remove()
-        },500)
          wdkAddChild('tabledetailname1')
+         wdkAddChild('tabledetailname2')
+         setTimeout(()=>{
+            $('tbody tr i')[1].remove()
+            $('tbody tr i')[2].remove()
+        },500)
          $('#div_03').hide()
          $('#div_04').hide()
          $('#div_05').hide()
@@ -364,50 +366,50 @@ function enviaParaAssinatura(nr_pasta, dadosResponsavel, idDocumento, nm_Arquivo
     rodarDataset(constraints)
 }
 
-function anexaDocumentoAssinado(idDocumento, nr_pasta) {
+// function anexaDocumentoAssinado(idDocumento, nr_pasta) {
 
-    var constraints = [DatasetFactory.createConstraint('codArquivo', idDocumento, idDocumento, ConstraintType.MUST)];
-    chaveArquivoAssinado = DatasetFactory.getDataset('ds_form_aux_vertsign', ["chaveArquivo"], constraints, null);
-    var params = {
-        // Request parameters
-        "includeOriginal": "True",
-        "includeManifest": "True",
-        "zipped": "False",
-    };
+//     var constraints = [DatasetFactory.createConstraint('codArquivo', idDocumento, idDocumento, ConstraintType.MUST)];
+//     chaveArquivoAssinado = DatasetFactory.getDataset('ds_form_aux_vertsign', ["chaveArquivo"], constraints, null);
+//     var params = {
+//         // Request parameters
+//         "includeOriginal": "True",
+//         "includeManifest": "True",
+//         "zipped": "False",
+//     };
 
-    $.ajax({
-            url: "https://api-sbx.portaldeassinaturas.com.br/api/v2/document/package?key=" + chaveArquivoAssinado.values[0].chaveArquivo + "&" + $.param(params),
-            beforeSend: function (xhrObj) {
-                // Request headers
-                xhrObj.setRequestHeader("Token", "0af0b25dd063404f892137a112831b6f");
-            },
-            type: "GET",
-            // Request body
-            data: "{body}",
-        })
-        .done(function (data) {
-            var nr_solicitacao = NUM_PROCESS;
-            var nm_arquivo = "solic_" + nr_solicitacao + "_assinado.pdf";
-            var constraintsDocument = new Array();
-            constraintsDocument.push(DatasetFactory.createConstraint("nm_arquivo", nm_arquivo, nm_arquivo, ConstraintType.MUST));
-            constraintsDocument.push(DatasetFactory.createConstraint("nr_pasta", nr_pasta, nr_pasta, ConstraintType.MUST));
-            constraintsDocument.push(DatasetFactory.createConstraint("base64", data[0].bytes, data[0].bytes, ConstraintType.MUST));
-            let dsDocument = DatasetFactory.getDataset('ds_grava_documento', null, constraintsDocument, null)
-            if (dsDocument != null && dsDocument != undefined) {
-                if (dsDocument.values.length > 0) {
-                    documentId = dsDocument.values[0]["documentId"];
-                    $("[name='doc_id']").val(documentId)
-                    FLUIGC.toast({
-                        message: 'Formulário assinado gerado com sucesso.',
-                        type: 'success'
-                    });
-                }
-            }
-        })
-        .fail(function () {
-            alert("error");
-        });
-}
+//     $.ajax({
+//             url: "https://api-sbx.portaldeassinaturas.com.br/api/v2/document/package?key=" + chaveArquivoAssinado.values[0].chaveArquivo + "&" + $.param(params),
+//             beforeSend: function (xhrObj) {
+//                 // Request headers
+//                 xhrObj.setRequestHeader("Token", "0af0b25dd063404f892137a112831b6f");
+//             },
+//             type: "GET",
+//             // Request body
+//             data: "{body}",
+//         })
+//         .done(function (data) {
+//             var nr_solicitacao = NUM_PROCESS;
+//             var nm_arquivo = "solic_" + nr_solicitacao + "_assinado.pdf";
+//             var constraintsDocument = new Array();
+//             constraintsDocument.push(DatasetFactory.createConstraint("nm_arquivo", nm_arquivo, nm_arquivo, ConstraintType.MUST));
+//             constraintsDocument.push(DatasetFactory.createConstraint("nr_pasta", nr_pasta, nr_pasta, ConstraintType.MUST));
+//             constraintsDocument.push(DatasetFactory.createConstraint("base64", data[0].bytes, data[0].bytes, ConstraintType.MUST));
+//             let dsDocument = DatasetFactory.getDataset('ds_grava_documento', null, constraintsDocument, null)
+//             if (dsDocument != null && dsDocument != undefined) {
+//                 if (dsDocument.values.length > 0) {
+//                     documentId = dsDocument.values[0]["documentId"];
+//                     $("[name='doc_id']").val(documentId)
+//                     FLUIGC.toast({
+//                         message: 'Formulário assinado gerado com sucesso.',
+//                         type: 'success'
+//                     });
+//                 }
+//             }
+//         })
+//         .fail(function () {
+//             alert("error");
+//         });
+// }
 
 function verificaPDF() {
     $("#div_03").hide();
@@ -417,8 +419,7 @@ function verificaPDF() {
     $("#div_07").hide();
     $("#div_08").hide();
 
-    var nr_pasta = "6793";
-    $("[name='nr_pasta']").val('6793')
+    var nr_pasta = $("[name='nr_pasta']").val();
     var nr_solicitacao = NUM_PROCESS;
     var nm_arquivo = "solic_" + nr_solicitacao + ".pdf";
 
