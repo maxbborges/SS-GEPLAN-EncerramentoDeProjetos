@@ -21,24 +21,29 @@ function validateForm(form) {
     if ((form.getValue("data_fim") == null || form.getValue("data_fim") == "") && (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
         throw "Data de fim n\u00E3o pode ser vazio.";
     }
-    if ((form.getValue("prazo") == null || form.getValue("prazo") == "" || form.getValue("prazo") != "Concluído dentro do prazo") && (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
-        if(form.getValue("prazo") != "Concluído dentro do prazo"){
-            if(form.getValue("just_prazo") == ""){
-                throw "Justifique o prazo!";
-            }
-        } else{
-            throw "Quanto ao prazo n\u00E3o pode ser vazio.";
-        }
-        
-    }
-    if ((form.getValue("escopo") == null || form.getValue("escopo") == "" || form.getValue("escopo") == "Escopo concluído parcialmente") && (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
-        if(form.getValue("escopo") == "Escopo concluído parcialmente"){
-            if(form.getValue("just_escopo") == ""){
-                throw "Justifique o Escopo!";
+
+    if (activity==0||activity==5){
+        if (form.getValue("prazo") == null || form.getValue("prazo") == "" || form.getValue("prazo") != "Concluído dentro do prazo") {
+            if(form.getValue("prazo") != "Concluído dentro do prazo"){
+                if (form.getValue("prazo") == null || form.getValue("prazo") == ""){
+                    throw "Quanto ao prazo n\u00E3o pode ser vazio!";
+                }else if(form.getValue("just_prazo") == ""){
+                    throw "Justifique o prazo!";
+                }
+            } else{
+                throw "Quanto ao prazo n\u00E3o pode ser vazio.";
             }
             
-        } else{
-            throw "Quanto ao escopo n\u00E3o pode ser vazio.";
+        }
+        if (form.getValue("escopo") == null || form.getValue("escopo") == "" || form.getValue("escopo") == "Escopo concluído parcialmente") {
+            if(form.getValue("escopo") == "Escopo concluído parcialmente"){
+                if(form.getValue("just_escopo") == ""){
+                    throw "Justifique o Escopo!";
+                }
+                
+            } else{
+                throw "Quanto ao escopo n\u00E3o pode ser vazio.";
+            }
         }
     }
     if ((form.getValue("column1_1___1") == null || form.getValue("column1_1___1") == "") && (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
